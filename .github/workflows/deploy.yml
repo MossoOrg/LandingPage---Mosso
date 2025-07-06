@@ -8,8 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions: # <-- AÑADE ESTA SECCIÓN
-      contents: write # <-- Y ESTA LÍNEA
+    permissions:
+      contents: write
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -18,10 +18,12 @@ jobs:
         uses: withastro/action@v2
         with:
           package-manager: npm@latest
-          path: ./virtual-visual
+          path: ./virtual-visual # Le decimos que el proyecto está en esta carpeta
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          # 👇 ¡AQUÍ ESTÁ LA CORRECCIÓN!
+          # La carpeta a publicar está DENTRO de la carpeta de tu proyecto Astro
+          publish_dir: ./virtual-visual/dist
