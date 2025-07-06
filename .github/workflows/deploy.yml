@@ -14,8 +14,9 @@ jobs:
 
       - name: Setup & Build 🔧
         uses: withastro/action@v2
-        with: # <-- AÑADE ESTA SECCIÓN
-          package-manager: npm@latest # <-- Y ESTA LÍNEA
+        with:
+          package-manager: npm@latest
+          path: ./virtual-visual # <-- AÑADE ESTA LÍNEA
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v4
