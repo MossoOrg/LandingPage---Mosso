@@ -1,0 +1,36 @@
+---
+// src/layouts/Layout.astro
+import "../styles/global.css";
+import Footer from "../components/Footer.astro"; // Importamos el Footer
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Reserva, pide y disfruta sin esperas con Mosso." />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=M+PLUS+Rounded+1c:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white text-slate-800">
+    {/* El <slot /> es donde Astro inyectará el contenido de tus páginas (como el Header y el main) */}
+    <slot /> 
+    
+    {/* El Footer se coloca aquí para que aparezca al final de todo */}
+    <Footer />
+  </body>
+</html>

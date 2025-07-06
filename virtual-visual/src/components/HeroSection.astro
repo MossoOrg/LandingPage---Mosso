@@ -1,0 +1,56 @@
+---
+// src/components/HeroSection.astro
+---
+
+<section class="relative text-white">
+  {/* Capa 1: Imagen de Fondo */}
+  <div 
+    class="absolute inset-0 bg-cover bg-center" 
+    style={`background-image: url('/hero-background.jpg');`}
+  >
+    {/* Capa 2: Superposición Oscura (para legibilidad del texto) */}
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+  </div>
+
+  {/* Capa 3: Contenido Principal */}
+  {/* Usamos 'relative' para que esté por encima de las capas de fondo */}
+  {/* py-24 y py-32 controlan la altura de la sección en diferentes tamaños de pantalla */}
+  <div class="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32 flex flex-col items-center">
+    
+    <div class="w-full max-w-xl mb-12 md:mb-16">
+      <div class="relative">
+        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <input 
+          type="text" 
+          placeholder="Restaurantes, Cafeterías, Bares etc." 
+          class="w-full py-4 pl-12 pr-4 rounded-full bg-white/90 text-gray-900 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500"
+        />
+      </div>
+    </div>
+
+    <div class="text-center">
+      {/* Recomendación: Usamos tamaños de fuente responsivos. 4xl en móvil, 5xl en escritorio */}
+      <h1 class="text-4xl md:text-5xl font-bold font-roboto tracking-tight">
+        Hazlo simple, hazlo con gusto, hazlo con <span class="font-mplus">Mosso.</span>
+      </h1>
+      
+      {/* Recomendación: Un párrafo más grande y legible (text-lg o text-xl) */}
+      <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-200">
+        Realiza tus reservas, pedidos y pagos en tus restaurantes a través de Mosso.
+      </p>
+
+      <div class="mt-10">
+        <a 
+          href="/registro" 
+          class="bg-[#030027] text-white font-bold text-lg px-8 py-3 rounded-full hover:bg-opacity-80 transition-transform duration-300 ease-in-out transform hover:scale-105"
+        >
+          Comienza ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

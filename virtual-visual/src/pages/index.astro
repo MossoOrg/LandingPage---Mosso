@@ -1,0 +1,151 @@
+---
+// src/pages/index.astro
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import HeroSection from "../components/HeroSection.astro";
+import CategoryGrid from "../components/CategoryGrid.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import InfoCard from "../components/InfoCard.astro";
+import AccordionItem from "../components/AccordionItem.astro";
+import ContactForm from "../components/ContactForm.astro"; 
+// --- TODO TU CÓDIGO JAVASCRIPT/TYPESCRIPT VA DENTRO DE ESTE ÚNICO BLOQUE ---
+
+const faqItems = [
+  {
+    question: "¿Cuáles son las modalidades de pago?",
+    answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    question: "¿Cómo puedo cancelar mi pedido?",
+    answer: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+  {
+    question: "¿Cómo hago mi reserva?",
+    answer: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    question: "¿Puedo pedir sin estar en el restaurante?",
+    answer: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  },
+  {
+    question: "¿Tu pedido no estuvo a tiempo?",
+    answer: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+  },
+  {
+    question: "Pedido cancelado y/o rechazado.",
+    answer: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+  },
+  {
+    question: "Tarjeta rechazada.",
+    answer: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
+  }
+];
+
+const experiencias = [
+  { label: 'Familia', icon: 'family' },
+  { label: 'Amigos', icon: 'friends' },
+  { label: 'Parejas', icon: 'couple' },
+  { label: 'Eventos', icon: 'events' },
+  { label: 'Trabajo', icon: 'work' },
+];
+
+const tiposDeRestaurante = [
+  { label: "Burguer's", icon: 'burgers' },
+  { label: 'Carnes', icon: 'steak' },
+  { label: 'Pastas', icon: 'pasta' },
+  { label: 'Fusión', icon: 'fusion' },
+  { label: 'Criollo', icon: 'criollo' },
+  { label: 'Marinos', icon: 'seafood' },
+  { label: 'Pollo', icon: 'chicken' },
+];
+---
+
+<Layout title="Bienvenido a Mosso">
+  <Header />
+  <main>
+    <HeroSection />
+
+    <CategoryGrid title="Experiencias" boldTitle="Inolvidables" items={experiencias} />
+    <CategoryGrid title="Tipos de" boldTitle="Restaurantes" items={tiposDeRestaurante} />
+    
+    <section class="py-16 sm:py-20 bg-gray-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionTitle title="Nuestros" boldTitle="Servicios" />
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+          <ServiceCard
+            title="Clientes"
+            description="Pide, paga y reserva desde tu celular, sin fricciones ni demoras."
+            imageUrl="/images/service-clients.jpg"
+          />
+          <ServiceCard
+            title="Restaurantes"
+            description="Digitaliza tu operación para ganar eficiencia sin perder el toque humano."
+            imageUrl="/images/service-restaurants.jpg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <SectionTitle title="Únete a" boldTitle="Mosso" />
+        <p class="text-center mt-2 text-lg text-gray-600">Simple y a tu gusto, solo con Mosso.</p>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <InfoCard 
+            title="Registra tu cuenta"
+            description="Descubre los beneficios que tiene Mosso para ti y se parte de la revolución culinaria."
+            imageUrl="/images/join-clients.jpg"
+            buttonText="Conocer más"
+            buttonHref="/registro"
+          />
+          <InfoCard 
+            title="Registra tu restaurante"
+            description="Descubre los beneficios que tienen los +XXX aliados en XX países que ya trabajan con Mosso."
+            imageUrl="/images/join-restaurants.jpg"
+            buttonText="Conocer más"
+            buttonHref="/socios"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-20">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <SectionTitle title="¿Necesitas más" boldTitle="razones?" />
+
+        <div class="mt-12 divide-y divide-gray-200">
+          {faqItems.map(item => (
+            <AccordionItem question={item.question} answer={item.answer} />
+          ))}
+        </div>
+      </div>
+    </section>
+    <ContactForm /> 
+  </main>
+</Layout>
+
+// Dentro de index.astro
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+
+    accordionTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const content = trigger.nextElementSibling as HTMLElement;
+        const icon = trigger.querySelector('.accordion-icon');
+
+        // --- Lógica Corregida ---
+        if (content.style.maxHeight) {
+          // Si está abierto (tiene una altura establecida), ciérralo
+          content.style.maxHeight = null;
+          icon?.classList.remove('rotate-180');
+        } else {
+          // Si está cerrado (no tiene altura explícita), ábrelo
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon?.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>

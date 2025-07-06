@@ -1,0 +1,89 @@
+---
+// src/components/Footer.astro
+---
+
+<footer class="bg-white text-slate-800">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+      <div class="space-y-4">
+        <h3 class="font-bold text-lg">Sobre nosotros</h3>
+        <ul class="space-y-2 text-slate-600">
+          <li><a href="#" class="hover:underline">Restaurantes</a></li>
+          <li><a href="#" class="hover:underline">Quiénes Somos</a></li>
+          <li><a href="#" class="hover:underline">Trabaja con nostros</a></li>
+          <li><a href="#" class="hover:underline">Contacto</a></li>
+          <li><a href="#" class="hover:underline">Legales de Promociones</a></li>
+          <li><a href="#" class="hover:underline">Protección de datos personales</a></li>
+        </ul>
+      </div>
+      <div class="space-y-4">
+        <h3 class="font-bold text-lg">Únete a Mosso</h3>
+        <ul class="space-y-2 text-slate-600">
+          <li><a href="#" class="hover:underline">Registra tu restaurante</a></li>
+          <li><a href="#" class="hover:underline">Trabaja con nostros</a></li>
+          <li><a href="#" class="hover:underline">Haz crecer tu marca</a></li>
+          <li><a href="#" class="hover:underline">Incrementa tus ventas</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="border-gray-200" />
+
+    <div class="text-center py-12">
+      <h2 class="text-4xl font-light text-gray-500">Descarga la <span class="font-bold text-slate-800">Aplicación</span></h2>
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="#" class="bg-black text-white flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-800">
+          <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.162 13.856C19.143 12.323 20.32 11.23 20.32 11.23C20.32 11.23 18.984 10.156 18.956 8.5C18.937 7.082 19.92 6.018 19.92 6.018C19.92 6.018 18.81 4.964 17.512 4.964C16.275 4.955 15.22 5.7 14.622 5.7C14.025 5.7 12.838 4.936 11.638 4.936C10.17 4.936 8.946 5.862 8.239 5.862C7.532 5.862 6.448 5.064 5.23 5.064C3.601 5.064 2.217 6.327 2.217 8.548C2.217 11.533 4.491 14.537 6.2 14.537C6.928 14.537 7.554 13.911 8.239 13.911C8.925 13.911 9.612 14.537 10.511 14.537C12.018 14.537 12.446 13.167 13.913 13.167C15.38 13.167 15.719 14.537 17.265 14.537C18.235 14.537 19.182 13.856 19.162 13.856ZM13.843 3.58C14.479 2.848 15.532 2.242 16.516 2.223C16.92 2.213 18.062 2.501 18.897 3.233C18.171 3.869 17.18 4.385 16.225 4.404C15.783 4.414 14.659 4.145 13.843 3.58Z" />
+          </svg>
+          <div>
+            <p class="text-xs">Descargar en la</p>
+            <p class="text-lg font-semibold">App Store</p>
+          </div>
+        </a>
+        <a href="#" class="bg-black text-white flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800">
+          <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 3.33782C7.36984 3.11322 7.82136 3 8.30519 3H18.3931C18.5363 3 18.6738 3.03314 18.7963 3.09594L8.37525 12.0541L7 11.2389V3.33782ZM7 20.6622V12.7611L8.37525 11.9459L18.7963 20.9041C18.6738 20.9669 18.5363 21 18.3931 21H8.30519C7.82136 21 7.36984 20.8868 7 20.6622ZM20.3392 11.002L10.3752 2.05406C9.91891 1.63583 9.33649 1.35003 8.69482 1.22868L19.9232 11.0775C20.2114 11.239 20.4042 11.5113 20.4497 11.8218L20.3392 11.002ZM19.9232 12.9225L8.69482 22.7713C9.33649 22.65 9.91891 22.3642 10.3752 21.9459L20.3392 12.998C20.4287 12.4411 20.2529 12.7842 19.9232 12.9225Z" />
+          </svg>
+          <div>
+            <p class="text-xs">DISPONIBLE EN</p>
+            <p class="text-lg font-semibold">Google Play</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="text-center text-slate-600">
+      <p class="font-semibold">Nuestras Redes Sociales</p>
+      <div class="mt-4 flex justify-center gap-6">
+        <a href="#" aria-label="X/Twitter" class="hover:text-slate-900">
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="hover:text-slate-900">
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="WhatsApp" class="hover:text-slate-900">
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.38 1.25 4.81L2 22l5.42-1.39c1.37.71 2.92 1.12 4.58 1.12h.01c5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zM12.04 20.13c-1.48 0-2.88-.39-4.1-1.09l-.29-.17-3.06.79.8-3.01-.19-.31a8.13 8.13 0 0 1-1.26-4.3 8.13 8.13 0 0 1 8.13-8.13c4.49 0 8.13 3.64 8.13 8.13 0 4.49-3.64 8.13-8.13 8.13zm4.49-6.17c-.25-.12-1.46-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.38.1-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.5-.41-.43-.56-.44-.14 0-.3 0-.46 0-.17 0-.43.06-.66.31-.22.25-.85.83-.85 2.02 0 1.19.87 2.34 1 2.5.12.17 1.71 2.63 4.15 3.63.59.25 1.05.4 1.41.51.61.19 1.17.16 1.62.1.48-.06 1.46-.6 1.67-1.18.2-.58.2-.1.14-.12z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="hover:text-slate-900">
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.44c-3.119 0-3.483.011-4.693.067-2.92.132-4.143 1.354-4.275 4.275-.056 1.21-.067 1.574-.067 4.693s.011 3.483.067 4.693c.132 2.92 1.354 4.143 4.275 4.275 1.21.056 1.574.067 4.693.067s3.483-.011 4.693-.067c2.92-.132 4.143-1.354 4.275-4.275.056-1.21.067-1.574.067-4.693s-.011-3.483-.067-4.693c-.132-2.92-1.354-4.143-4.275-4.275C15.483 3.614 15.119 3.603 12 3.603zM12 7.297c-2.599 0-4.703 2.104-4.703 4.703s2.104 4.703 4.703 4.703 4.703-2.104 4.703-4.703S14.599 7.297 12 7.297zM12 15a3 3 0 110-6 3 3 0 010 6zm6.364-8.887a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="mt-8 text-sm">
+        <p class="font-bold text-lg font-mplus">@MOSSO</p>
+        <p>© 2025 Mosso Inc. All rights reserverd.</p>
+        <p>Copyright 2025 - GloveTalk | Avenida El Éxito.</p>
+      </div>
+    </div>
+
+  </div>
+</footer>

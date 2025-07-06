@@ -1,0 +1,37 @@
+---
+// src/components/CategoryGrid.astro
+import Icon from './Icon.astro'; // <-- 1. IMPORTA EL COMPONENTE
+
+interface Item {
+  label: string;
+  icon: string;
+}
+interface Props {
+  title: string;
+  boldTitle: string;
+  items: Item[];
+}
+
+const { title, boldTitle, items } = Astro.props;
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-roboto font-light text-gray-500 sm:text-4xl text-center">
+      {title}
+      <span class="font-bold text-slate-800">{boldTitle}</span>
+    </h2>
+
+    <div class="mt-12 grid grid-cols-2 gap-y-10 gap-x-6 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7">
+      {items.map((item) => (
+        <a href="#" class="group flex flex-col items-center text-center p-2 rounded-lg hover:bg-gray-100 transition-colors">
+          <div class="flex h-16 w-16 items-center justify-center rounded-full bg-gray-200 group-hover:bg-purple-100 transition-colors">
+            {/* 2. REEMPLAZA EL SPAN CON EL COMPONENTE ICON */}
+            <Icon name={item.icon} className="h-9 w-9 text-slate-600 group-hover:text-purple-600 transition-colors" />
+          </div>
+          <p class="mt-4 font-semibold text-slate-700">{item.label}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

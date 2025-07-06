@@ -1,0 +1,15 @@
+---
+// src/components/SectionTitle.astro
+interface Props {
+  title: string;
+  boldTitle: string;
+  isCentered?: boolean;
+}
+const { title, boldTitle, isCentered = true } = Astro.props;
+---
+<div class={isCentered ? 'text-center' : ''}>
+  <h2 class="text-3xl font-roboto font-light text-gray-500 sm:text-4xl">
+    {title}
+    <span class="font-bold text-slate-800">{boldTitle}</span>
+  </h2>
+</div>

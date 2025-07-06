@@ -1,0 +1,45 @@
+---
+// src/components/ContactForm.astro
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<section class="bg-gray-50 py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <SectionTitle title="Escríbenos una" boldTitle="Pregunta" />
+      <p class="mt-2 text-lg text-gray-600">Ayúdanos a mejorar</p>
+    </div>
+
+    {/* El atributo 'action' es donde se enviarán los datos. Usaremos un servicio externo. */}
+    <form action="https://formspree.io/f/mblyeknd" method="POST" class="mt-12 bg-white p-8 shadow-lg rounded-xl">
+      
+      <fieldset class="grid grid-cols-2 gap-4 mb-6">
+        <legend class="sr-only">Tipo de usuario</legend>
+        <div>
+          <label for="cliente" class="block w-full cursor-pointer rounded-lg border border-gray-300 bg-white p-4 text-center hover:bg-gray-50 has-[:checked]:border-blue-600 has-[:checked]:ring-2 has-[:checked]:ring-blue-600">
+            <input type="radio" name="userType" value="cliente" id="cliente" class="sr-only" checked />
+            <p class="text-sm font-medium text-gray-900">Cliente</p>
+          </label>
+        </div>
+        <div>
+          <label for="restaurante" class="block w-full cursor-pointer rounded-lg border border-gray-300 bg-white p-4 text-center hover:bg-gray-50 has-[:checked]:border-blue-600 has-[:checked]:ring-2 has-[:checked]:ring-blue-600">
+            <input type="radio" name="userType" value="restaurante" id="restaurante" class="sr-only" />
+            <p class="text-sm font-medium text-gray-900">Restaurante</p>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="space-y-4">
+        <input type="text" name="name" required placeholder="Nombre" class="w-full rounded-lg border-gray-200 bg-gray-100 p-4 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+        <input type="email" name="email" required placeholder="Correo electrónico" class="w-full rounded-lg border-gray-200 bg-gray-100 p-4 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+        <input type="tel" name="phone" placeholder="Número teléfonico" class="w-full rounded-lg border-gray-200 bg-gray-100 p-4 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+        <input type="text" name="subject" required placeholder="Tema" class="w-full rounded-lg border-gray-200 bg-gray-100 p-4 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+        <textarea name="message" required placeholder="Mensaje" rows="5" class="w-full rounded-lg border-gray-200 bg-gray-100 p-4 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+      </div>
+
+      <button type="submit" class="mt-8 w-full bg-[#030027] text-white font-bold text-lg px-8 py-3 rounded-full hover:bg-opacity-80 transition-transform duration-300 ease-in-out transform hover:scale-105">
+        Enviar
+      </button>
+    </form>
+  </div>
+</section>
