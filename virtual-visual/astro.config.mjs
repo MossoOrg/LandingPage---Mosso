@@ -1,16 +1,12 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
+import tailwind from "@astrojs/tailwind";
 
-import tailwindcss from '@tailwindcss/vite';
-
-// https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()]
-  },
-  // Tu URL base de GitHub Pages
+  // Confirma que tu usuario de GitHub es 'cuak123' (sensible a mayúsculas)
   site: 'https://cuak123.github.io', 
 
-  // El nombre de tu repositorio
+  // Confirma que el nombre del repositorio es EXACTAMENTE este
   base: '/LandingPage---Mosso',
+
+  integrations: [tailwind()]
 });
