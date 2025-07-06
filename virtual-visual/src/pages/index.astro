@@ -9,6 +9,13 @@ import ServiceCard from "../components/ServiceCard.astro";
 import InfoCard from "../components/InfoCard.astro";
 import AccordionItem from "../components/AccordionItem.astro";
 import ContactForm from "../components/ContactForm.astro"; 
+import serviceClientsImg from '../assets/service-clients.jpg';
+import serviceRestaurantsImg from '../assets/service-restaurants.jpg';
+import joinClientsImg from '../assets/join-clients.jpg';
+import joinRestaurantsImg from '../assets/join-restaurants.jpg';
+
+
+
 // --- TODO TU CÓDIGO JAVASCRIPT/TYPESCRIPT VA DENTRO DE ESTE ÚNICO BLOQUE ---
 
 const faqItems = [
@@ -81,7 +88,8 @@ const tiposDeRestaurante = [
           <ServiceCard
             title="Restaurantes"
             description="Digitaliza tu operación para ganar eficiencia sin perder el toque humano."
-            imageUrl="/images/service-restaurants.jpg"
+            imageUrl={serviceClientsImg.src}
+
           />
         </div>
       </div>
@@ -95,14 +103,14 @@ const tiposDeRestaurante = [
           <InfoCard 
             title="Registra tu cuenta"
             description="Descubre los beneficios que tiene Mosso para ti y se parte de la revolución culinaria."
-            imageUrl="/images/join-clients.jpg"
+            imageUrl={joinClientsImg.src}
             buttonText="Conocer más"
             buttonHref="/registro"
           />
           <InfoCard 
             title="Registra tu restaurante"
             description="Descubre los beneficios que tienen los +XXX aliados en XX países que ya trabajan con Mosso."
-            imageUrl="/images/join-restaurants.jpg"
+            imageUrl={joinRestaurantsImg.src}
             buttonText="Conocer más"
             buttonHref="/socios"
           />

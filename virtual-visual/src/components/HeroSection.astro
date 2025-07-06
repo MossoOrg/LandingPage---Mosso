@@ -5,9 +5,9 @@
 <section class="relative text-white">
   {/* Capa 1: Imagen de Fondo */}
   <div 
-    class="absolute inset-0 bg-cover bg-center" 
-    style={`background-image: url('/hero-background.jpg');`}
-  >
+  class="absolute inset-0 bg-cover bg-center" 
+  style={`background-image: url('${heroBackgroundImage.src}');`} {/* <-- 2. ÚSALA AQUÍ */}
+>
     {/* Capa 2: Superposición Oscura (para legibilidad del texto) */}
     <div class="absolute inset-0 bg-black opacity-50"></div>
   </div>
