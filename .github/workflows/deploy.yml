@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions: # <-- AÑADE ESTA SECCIÓN
+      contents: write # <-- Y ESTA LÍNEA
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -16,7 +18,7 @@ jobs:
         uses: withastro/action@v2
         with:
           package-manager: npm@latest
-          path: ./virtual-visual # <-- AÑADE ESTA LÍNEA
+          path: ./virtual-visual
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v4
